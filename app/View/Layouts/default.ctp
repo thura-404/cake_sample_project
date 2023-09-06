@@ -3,18 +3,9 @@
 
 <head>
 
-	<title>
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-	echo $this->Html->meta('icon');
-
-	echo $this->Html->css('cake.generic');
-
-	echo $this->fetch('meta');
-	echo $this->fetch('css');
-	echo $this->fetch('script');
-	?>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 
 	<!-- Bootstrap CSS v5.0 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -24,11 +15,6 @@
 </head>
 
 <body>
-
-
-
-
-	<?php echo $this->Flash->render(); ?>
 
 	<?php echo $this->fetch('content'); ?>
 

@@ -162,6 +162,35 @@
 		<div class="col-10 p-0">
 			<div class="card m-0" style="width: 100%; height: 100vh">
 				<div class="card-body">
+					<?php
+					$message = $this->Flash->render(); // Render the flash message
+
+					if (!empty($message)) :
+						// Check if it contains the 'success' class
+						if (strpos($message, 'success') !== false) :
+					?>
+							<div class="alert alert-success alert-dismissible fade show" role="alert">
+								<strong>Success!</strong> <?php echo $message ?>
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+						<?php
+						elseif (strpos($message, 'error') !== false) :
+						?>
+							<div class="alert alert-error alert-dismissible fade show" role="alert">
+								<strong>Error!</strong> <?php echo $message ?>
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+						<?php
+						else :
+						?>
+							<div class="alert alert-warning alert-dismissible fade show" role="alert">
+								<strong>ALert!</strong> <?php echo $message ?>
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+					<?php
+						endif;
+					endif;
+					?>
 					<h2 class="card-title"><?php echo __('Products'); ?></h2>
 					<table class="table table-striped-columns">
 						<thead>
@@ -183,7 +212,7 @@
 									<td>
 										<?php echo $this->Html->link(__('View'), array('action' => 'view', $product['Product']['id']), array('class' => 'btn btn-link')); ?>
 										<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $product['Product']['id']), array('class' => 'btn btn-link')); ?>
-										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $product['Product']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $product['Product']['id']), 'class' => 'btn btn-link')); ?>
+										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $product['Product']['id']), array('confirm' => __('Are you sure you want to delete: %s?', $product['Product']['name']), 'class' => 'btn btn-link')); ?>
 									</td>
 								</tr>
 							<?php endforeach; ?>

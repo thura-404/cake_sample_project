@@ -76,7 +76,8 @@ class ProductsController extends AppController
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Product->save($this->request->data)) {
-				$this->Flash->success(__('The product has been saved.'));
+				$this->Flash->success('The product has been saved.', ['class' => 'success']);
+				// $this->Flash->success(__('The product has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash->error(__('The product could not be saved. Please, try again.'));
@@ -101,9 +102,9 @@ class ProductsController extends AppController
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Product->delete($id)) {
-			$this->Flash->success(__('The product has been deleted.'));
+			$this->Flash->success(__('The product has been deleted.'), array('class' => 'alert alert-success'));
 		} else {
-			$this->Flash->error(__('The product could not be deleted. Please, try again.'));
+			$this->Flash->error(__('The product could not be deleted. Please, try again.'), array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
