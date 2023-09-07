@@ -52,6 +52,30 @@ class ProductsController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post')) {
+			// Process the uploaded image
+			$uploadedImage = $this->request->data['Product']['image'];
+
+			// Check if an image was uploaded
+			if (!empty($uploadedImage['tmp_name'])) {
+				// Define the folder where you want to store uploaded images
+				$uploadFolder = 'img/products/';
+
+				// Create the folder if it doesn't exist
+				if (!is_dir(WWW_ROOT . $uploadFolder)) {
+					mkdir(WWW_ROOT . $uploadFolder, 0755, true);
+				}
+
+				// Generate a unique filename for the uploaded image
+				$filename = uniqid() . '_' . $uploadedImage['name'];
+
+				// Move the uploaded image to the upload folder
+				move_uploaded_file($uploadedImage['tmp_name'], WWW_ROOT . $uploadFolder . $filename);
+
+				// Save the filename to the database
+				$this->request->data['Product']['image'] = $uploadFolder . $filename;
+			}
+
+			// Continue with your regular save logic
 			$this->Product->create();
 			if ($this->Product->save($this->request->data)) {
 				$this->Flash->success(__('The product has been saved.'));
