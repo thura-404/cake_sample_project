@@ -2,7 +2,7 @@
 	<div class="card-body">
 		<?php echo $this->element('MessageBox/default'); ?>
 
-		<h2 class="card-title"><?php echo __('Products'); ?></h2>
+		<h2 class="card-title"><?php echo __('Carts'); ?></h2>
 		<table class="table table-striped-columns">
 			<thead>
 				<tr>
