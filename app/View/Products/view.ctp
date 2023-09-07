@@ -1,34 +1,42 @@
-<div class="products view">
-<h2><?php echo __('Product'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['name']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Price'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['price']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Quantity'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['quantity']); ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Product'), array('action' => 'edit', $product['Product']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Product'), array('action' => 'delete', $product['Product']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $product['Product']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Products'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Product'), array('action' => 'add')); ?> </li>
-	</ul>
+<div class="container-fluid" style="height: 100vh;">
+	<div class="row">
+		<div class="col-2 p-0">
+			<?php echo $this->element('Sidebar/default'); ?>
+		</div>
+		<div class="col-10 p-0">
+			<div class="card m-0" style="width: 100%; height: 100vh">
+				<div class="card-body">
+					<?php echo $this->element('MessageBox/default'); ?>
+
+					<h2 class="card-title"><?php echo __('Product Detail'); ?></h2>
+					<ul class="list-group">
+						<li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold"><?php echo __('ID'); ?></div>
+							</div>
+							<span class="badge bg-primary rounded-pill"><?php echo h($product['Product']['id']); ?></span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold"><?php echo __('Name'); ?></div>
+								<div class="ms-4"><?php echo h($product['Product']['name']); ?></div>
+							</div>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold"><?php echo __('Price'); ?></div>
+							</div>
+							<span class="badge bg-primary rounded-pill"><?php echo h($product['Product']['price']); ?> MMK</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold"><?php echo __('In Stock'); ?></div>
+							</div>
+							<span class="badge bg-primary rounded-pill"><?php echo h($product['Product']['quantity']); ?></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

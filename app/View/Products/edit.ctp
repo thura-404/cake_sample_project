@@ -1,21 +1,25 @@
-<div class="products form">
-<?php echo $this->Form->create('Product'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Product'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('price');
-		echo $this->Form->input('quantity');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<div class="container-fluid" style="height: 100vh;">
+	<div class="row">
+		<div class="col-2 p-0">
+			<?php echo $this->element('Sidebar/default'); ?>
+		</div>
+		<div class="col-10 p-0">
+			<div class="card m-0" style="width: 100%; height: 100vh">
+				<div class="card-body">
+					<?php echo $this->element('MessageBox/default'); ?>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Product.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('Product.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('List Products'), array('action' => 'index')); ?></li>
-	</ul>
+					<h2 class="card-title"><?php echo __('Edit Product Details'); ?></h2>
+					<?php
+					echo $this->Form->create('Product', array('class' => 'form-group'));
+					echo $this->Form->input('id', array('class' => 'form-control mb-3'));
+					echo $this->Form->input('name', array('class' => 'form-control mb-3'));
+					echo $this->Form->input('price', array('class' => 'form-control mb-3'));
+					echo $this->Form->input('quantity', array('class' => 'form-control mb-3'));
+					echo $this->Form->button('Save', array('class' => 'btn btn-primary'));
+					echo $this->Form->end();
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
