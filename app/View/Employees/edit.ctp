@@ -1,21 +1,16 @@
-<div class="employees form">
-<?php echo $this->Form->create('Employee'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Employee'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('email');
-		echo $this->Form->input('password');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<div class="card m-0" style="width: 100%; height: 100vh">
+	<div class="card-body">
+		<?php echo $this->element('MessageBox/default'); ?>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Employee.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('Employee.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('List Employees'), array('action' => 'index')); ?></li>
-	</ul>
+		<h2 class="card-title"><?php echo __('Add a new Employee'); ?></h2>
+		<?php
+		echo $this->Form->create('Employee', array('class' => 'form-group'));
+		echo $this->Form->input('id', array('class' => 'form-control mb-3'));
+		echo $this->Form->input('name', array('class' => 'form-control mb-3'));
+		echo $this->Form->input('email', array('class' => 'form-control mb-3'));
+		echo $this->Form->input('password', array('class' => 'form-control mb-3'));
+		echo $this->Form->button('Save', array('class' => 'btn btn-primary'));
+		echo $this->Form->end();
+		?>
+	</div>
 </div>
