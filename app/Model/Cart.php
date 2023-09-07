@@ -62,7 +62,7 @@ class Cart extends AppModel
 			'fields' => '',
 			'order' => ''
 		),
-		'CartDetails' => array(
+		'CartDetail' => array(
 			'className' => 'CartDetail',
 			'foreignKey' => 'cart_details_id',
 			'conditions' => '',

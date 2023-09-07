@@ -18,7 +18,7 @@
 					<tr>
 						<td><?php echo h($cart['Cart']['id']); ?>&nbsp;</td>
 						<td><?php echo $this->Html->link($cart['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $cart['Customer']['id'])); ?></td>
-						<td><?php echo $this->Html->link($cart['CartDetails']['id'], array('controller' => 'cart_details', 'action' => 'view', $cart['CartDetails']['id'])); ?></td>
+						<td><?php echo $this->Html->link($cart['CartDetail']['id'], array('controller' => 'cart_details', 'action' => 'view', $cart['CartDetail']['id'])); ?></td>
 						<td><?php echo h($cart['Cart']['date']); ?>&nbsp;</td>
 						<td>
 							<?php echo $this->Html->link(__('View'), array('action' => 'view', $cart['Cart']['id'])) ?>
