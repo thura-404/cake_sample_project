@@ -14,7 +14,7 @@
 							<div class="ms-2 me-auto">
 								<div class="fw-bold"><?php echo __('ID'); ?></div>
 							</div>
-							<span class="badge bg-primary rounded-pill"><?php echo h($product['Product']['id']); ?></span>
+							<span class="badge bg-dark rounded-pill"><?php echo h($product['Product']['id']); ?></span>
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-start">
 							<div class="ms-2 me-auto">
@@ -26,13 +26,13 @@
 							<div class="ms-2 me-auto">
 								<div class="fw-bold"><?php echo __('Price'); ?></div>
 							</div>
-							<span class="badge bg-primary rounded-pill"><?php echo h($product['Product']['price']); ?> MMK</span>
+							<span class="badge bg-secondary rounded-pill"><?php echo h($product['Product']['price']); ?> MMK</span>
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-start">
 							<div class="ms-2 me-auto">
 								<div class="fw-bold"><?php echo __('In Stock'); ?></div>
 							</div>
-							<span class="badge bg-primary rounded-pill"><?php echo h($product['Product']['quantity']); ?></span>
+							<span class="badge bg-secondary rounded-pill"><?php echo h($product['Product']['quantity']); ?></span>
 						</li>
 					</ul>
 				</div>

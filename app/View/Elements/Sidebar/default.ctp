@@ -11,11 +11,11 @@
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body p-0">
         <ul class="list-group list-group-flush m-0">
-          <li class="list-group-item btn btn-link"><?php echo __('Employees') ?></li>
-          <li class="list-group-item btn btn-link"><?php echo __('Products'); ?></li>
-          <li class="list-group-item btn btn-link"><?php echo __('Customers') ?></li>
-          <li class="list-group-item btn btn-link"><?php echo __('Carts') ?></li>
-          <li class="list-group-item btn btn-link"><?php echo __('Cart Items') ?></li>
+          <?php echo $this->HTML->link(__('Employees'), array('controller' => 'employees', 'action' => 'index'), array('class' => 'btn btn-link')); ?>
+          <?php echo $this->HTML->link(__('Products'), array('controller' => 'products', 'action' => 'index'), array('class' => 'btn btn-link')); ?>
+          <?php echo $this->HTML->link(__('Customers'), array('controller' => 'customers', 'action' => 'index'), array('class' => 'btn btn-link')); ?>
+          <?php echo $this->HTML->link(__('Carts'), array('controller' => 'carts', 'action' => 'index'), array('class' => 'btn btn-link')); ?>
+          <?php echo $this->HTML->link(__('Cart Details'), array('controller' => 'cartdetails', 'action' => 'index'), array('class' => 'btn btn-link')); ?>
         </ul>
       </div>
     </div>
