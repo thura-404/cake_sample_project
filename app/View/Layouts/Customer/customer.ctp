@@ -10,7 +10,7 @@
           <?php echo $this->HTML->link('Home', array('controller' => 'home', 'action' => 'index'), array('class' => 'nav-link active', 'aria-current' => 'page')) ?>
         </li>
         <li class="nav-item">
-          <?php echo $this->HTML->link('Carts', array('controller' => 'carts', 'action' => 'index'), array('class' => 'nav-link')) ?>
+          <?php echo $this->HTML->link('Carts', array('controller' => 'carts', 'action' => 'items'), array('class' => 'nav-link')) ?>
           <!-- <a class="nav-link" href="#">Cart</a> -->
         </li>
         <li class="nav-item">
@@ -25,5 +25,8 @@
 </nav>
 
 <div class="container-fluid p-4" style="max-height: calc(100vh - 80px); overflow: auto; width: 100%;">
-  <?php echo $this->fetch('content'); ?>
+  <?php
+  echo $this->element('MessageBox/default');
+  echo $this->fetch('content');
+  ?>
 </div>

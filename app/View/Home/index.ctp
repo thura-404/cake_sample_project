@@ -23,7 +23,7 @@
               <span class="badge bg-secondary rounded-pill"><?php echo h($product['Product']['quantity']); ?></span>
             </li>
           </ul>
-          <?php echo $this->HTML->link('Add to Cart', '/cart/add/' . $product['Product']['id'], ['class' => 'btn btn-primary btn-block']); ?>
+          <?php echo $this->HTML->link('Add to Cart', '/carts/addToCart/' . $product['Product']['id'], ['class' => 'btn btn-primary btn-block']); ?>
         </div>
       </div>
     </div>
