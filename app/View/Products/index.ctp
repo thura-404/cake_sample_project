@@ -2,7 +2,10 @@
 	<div class="card-body">
 		<?php echo $this->element('MessageBox/default'); ?>
 
-		<h2 class="card-title"><?php echo __('Products'); ?></h2>
+		<div class="row">
+			<h2 class="card-title col-6"><?php echo __('Products'); ?></h2>
+			<h2 class="card-title col-6"><?php echo $this->HTML->link(__('Add Product'), array('action' => 'add'), array('class' => 'btn btn-primary float-right')); ?></h2>
+		</div>
 		<table class="table table-striped-columns">
 			<thead>
 				<tr>
